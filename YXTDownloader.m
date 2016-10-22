@@ -193,7 +193,7 @@
         [operation cancel];
         [self.operations removeObjectForKey:downloadItem.downloadURL];
     }
-    [self.finishedArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"downloadURL!=%@", downloadItem.downloadURL]];
+    [self.downloadingArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"downloadURL!=%@", downloadItem.downloadURL]];
     [self deleteFileWithFilePath:[self getCacheFileWithName:downloadItem.fileName]];
     [self saveDownloadingList];
 }
